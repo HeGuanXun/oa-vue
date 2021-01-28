@@ -1,0 +1,26 @@
+.full_size {
+  width: 100%;
+  height: 100%;
+}
+
+.el-header {
+  padding: 0 !important;
+}
+
+.el-main {
+  padding: 0 !important;
+}
+
+.columnflex {
+  display: flex;
+  flex-direction: column;
+}
+.rowFlex {
+  display: flex;
+  flex-direction: row;
+}
+.centerflex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
