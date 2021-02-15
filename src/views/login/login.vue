@@ -73,7 +73,7 @@ export default {
           }).then(res => {
             this.$router.push("home");
           }).catch(error => {
-            this.$message.error('登录失败，请联系管理员');
+           /* this.$message.error('登录失败，请联系管理员');*/
             this.loading = false;
           });
         } else {

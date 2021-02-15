@@ -18,23 +18,21 @@
             :index="item.url"
         />
       </el-tabs>
-      <el-link icon="el-icon-s-operation" class=""></el-link>
-      <div class="top_mall" hidden="hidden" ref="more" @mouseleave="mouseLeave">
-       <el-button type="primary" class="el-button">招聘</el-button>
-       <el-button type="primary" class="el-button">人事</el-button>
-       <el-button type="primary" class="el-button">薪酬</el-button>
-       <el-button type="primary" class="el-button">培训</el-button>
-       <el-button type="primary" class="el-button">考核</el-button>
-       <el-button type="primary" class="el-button">简报</el-button>
-       <el-button type="primary" class="el-button">计划</el-button>
-       <el-button type="primary" class="el-button">社区</el-button>
-       <el-button type="primary" class="el-button">流程</el-button>
-       <el-button type="primary" class="el-button">内容</el-button>
-       <el-button type="primary" class="el-button">日程</el-button>
-      </div>
+<!--      <el-link icon="el-icon-s-operation" class=""></el-link>-->
+<!--      <div class="top_mall" hidden="hidden" ref="more" @mouseleave="mouseLeave">-->
+<!--       <el-button type="primary" class="el-button"  @click="moreClick(moreBarList[0])">招聘</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[1])">人事</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[2])">薪酬</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[3])">培训</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[4])">考核</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[5])">简报</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[6])">计划</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[7])">社区</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[8])">流程</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[9])">内容</el-button>-->
+<!--       <el-button type="primary" class="el-button" @click="moreClick(moreBarList[10])">日程</el-button>-->
+<!--      </div>-->
     </div>
-
-<!--    <el-link class="search_top" icon="el-icon-search"></el-link>-->
     <div class="logout_top">
       <span>Admin</span>
       <el-link  icon="el-icon-switch-button" @click.native="logout"></el-link>
@@ -134,68 +132,178 @@ export default {
       eventBus:'password_eventBus',
       home_url:"/home",
       activeName: "mh",
+      moreBarList:[
+        {
+          label:'招聘',
+          name: "zp",
+          navList: [
+            { name: '招聘申请', url: "/home" },
+            { name: '我的申请', url: "/home" },
+            { name: '招聘审审批', url: "/home" },
+            { name: '与我相关', url: "/home" },
+          ]
+        },
+        {
+          label:'我的档案',
+          name: "wdda",
+          navList: [
+            { name: '个人信息', url: "/home" },
+          ]
+        },
+        {
+          label:'薪酬',
+          name: "xc",
+          navList: [
+            { name: '薪酬单元', url: "/home" },
+            { name: '员工分组', url: "/home" },
+            { name: '固薪管理', url: "/home" },
+            { name: '工资表', url: "/home" },
+            { name: '薪酬统计', url: "/home" },
+            { name: '我的薪酬', url: "/home" },
+          ]
+        },
+        {
+          label:'培训列表',
+          name: "pxlb",
+          navList: [
+            { name: '培训列表', url: "/home" },
+            { name: '我的培训', url: "/home" },
+          ]
+        },
+        {
+          label:'考核',
+          name: "kh",
+          navList: [
+            { name: '评价分析', url: "/home" },
+            { name: '统计分析', url: "/home" },
+            { name: '考核管理', url: "/home" },
+            { name: '指标管理', url: "/home" },
+            { name: '模板管理', url: "/home" },
+            { name: '我的考核', url: "/home" },
+            { name: '我评价的', url: "/home" },
+            { name: '我审核的', url: "/home" },
+            { name: '考核成绩', url: "/home" },
+          ]
+        },
+        {
+          label:'简报',
+          name: "jb",
+          navList: [
+            { name: '成员日报', url: "/home" },
+          ]
+        },
+        {
+          label:'计划',
+          name: "jh",
+          navList: [
+            { name: '日报提交统计', url: "/home" },
+          ]
+        },
+        {
+          label:'社区',
+          name: "sq",
+          navList: [
+            { name: '社区中心', url: "/home" },
+          ]
+        },
+        {
+          label:' 流程',
+          name: "lc",
+          navList: [
+            { name: '新建表单', url: "/home" },
+            { name: '全部表单', url: "/home" },
+            { name: '新建流程', url: "/home" },
+            { name: '全部流程', url: "/home" },
+            { name: '委托设置', url: "/home" },
+            { name: '全部委托', url: "/home" },
+            { name: '流程报告', url: "/home" },
+            { name: '流程申请', url: "/home" },
+            { name: '我的流程', url: "/home" },
+            { name: '待我审核', url: "/home" },
+            { name: '与我相关', url: "/home" },
+          ]
+        },
+        {
+          label:'内容',
+          name: "nr",
+          navList: [
+            { name: '内容', url: "/home" },
+          ]
+        },
+        {
+          label:'日程',
+          name: "rc",
+          navList: [
+            { name: '日程管理', url: "/home" },
+            { name: '我的事件', url: "/home" },
+          ]
+        },
+      ],
       tabBarList: [
         {
           label:'门户',
           name: "mh",
           navList: [
-            { name: '主页', url: "/home" }
+            { name: '个人门户', url: "/grmh" },
           ]
         },
         {
           label: '会议',
           name: "hy",
           navList: [
-            { name: '日报管理', url: "/book" },
+            { name: '会议管理系统', url: "/book" },
+            { name: '会议室管理系统', url: "/book1" },
           ]
         },
         {
           label: '资产',
           name: "zc",
           navList: [
-            { name: '日报管理', url: "/book" },
+            { name: '资产管理', url: "/book" },
+            { name: '资产分类', url: "/book" },
           ]
         },
         {
           label: '报销',
           name: "bx",
           navList: [
-            { name: '日报管理', url: "/book" },
+            { name: '报销申请', url: "/book" },
+            { name: '全部报销', url: "/book" },
           ]
         },
         {
           label: '名片制作',
           name: "mpzz",
           navList: [
-            { name: '日报管理', url: "/book" },
+            { name: '名片制作申请', url: "/book" },
           ]
         },
         {
           label: '考勤',
           name: "kq",
           navList: [
-            { name: '日报管理', url: "/book" },
+            { name: '我的考勤', url: "/book" },
           ]
         },
         {
-          label: '.',
-          name: "more",
+          label: '简报',
+          name: "jb",
           navList: [
             { name: '日报管理', url: "/book" },
           ]
         },
-        {
-          label: '常用',
-          name: "cy",
-          navList: [
-            { name: '日报管理', url: "/book" },
-          ]
-        },
+        // {
+        //   label: '常用',
+        //   name: "cy",
+        //   navList: [
+        //     { name: '日报管理', url: "/book" },
+        //   ]
+        // },
         {
           label: '人事申请',
           name: "rssq",
           navList: [
-            { name: '日报管理', url: "/book" },
+            { name: '请假申请', url: "/book" },
           ]
         },
       ],
@@ -222,21 +330,25 @@ export default {
       this.$refs.more.hidden='hidden';
       this.myHidden = false;
     },
-    handleClick(tab) {
-      if (this.tabBarList[tab.index].name=='more'){
-        this.myHidden? this.myHidden=false:this.myHidden=true;
-        if (this.myHidden){
-          this.$refs.more.removeAttribute('hidden');
-        }else {
-          this.$refs.more.hidden='hidden';
-        }
-      }else {
-        this.$refs.more.hidden='hidden';
-        this.myHidden = false;
-      }
-      eventBus.$emit("navList", this.tabBarList[tab.index].navList);
-    },
 
+    moreClick(moreBarList){
+      eventBus.$emit("navList", moreBarList);
+    },
+    handleClick(tab) {
+      eventBus.$emit("navList", this.tabBarList[tab.index]);
+      // if (this.tabBarList[tab.index].name=='more'){
+      //   this.myHidden? this.myHidden=false:this.myHidden=true;
+      //   if (this.myHidden){
+      //     this.$refs.more.removeAttribute('hidden');
+      //   }else {
+      //     this.$refs.more.hidden='hidden';
+      //   }
+      // }else {
+      //   this.$refs.more.hidden='hidden';
+      //   this.myHidden = false;
+      //   eventBus.$emit("navList", this.tabBarList[tab.index]);
+      // }
+    },
     logout() {
       this.$confirm('确定要退出登录吗？?', '退出系统确认', {
         confirmButtonText: '确定',

@@ -10,3 +10,4 @@ export const TITLE = "TITLE";
 export const LANGUAGE = "LANGUAGE";
 export const AREA = "AREA";
 export const VUE = "VUE";
+export const NAV_TITLE = "NAV_TITLE";

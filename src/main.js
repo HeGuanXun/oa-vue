@@ -5,7 +5,7 @@ import axios from "@/axios";
 import store from "./scripts/store";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-// import "@/styles/index.scss";
+import "@/styles/index.scss";
 // import '@/icons'
 // import '@/element-ui/trsTheme/index.css'
 import '@/assets/scss/aui.scss'

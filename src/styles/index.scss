@@ -15,9 +15,19 @@
   display: flex;
   flex-direction: column;
 }
+.columnCenterflex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
 .rowFlex {
   display: flex;
   flex-direction: row;
+}
+.leftRightFlex{
+  display: flex;
 }
 .centerflex{
   display: flex;

@@ -7,7 +7,7 @@ const routes = [
   {
     path: "",
     name: "index",
-    redirect: "/login",
+    redirect: "/home",
     component: () => import("../views/layout"),
     children: [
       {
@@ -22,6 +22,12 @@ const routes = [
         component: () => import("../views/book/index"),
         meta: { title: "日报" }
       },
+        {
+            path: "grmh",
+            name: "grmh",
+            component: () => import("../views/grmh/index"),
+            meta: { title: "个人门户" }
+        },
     ]
   }
 ];

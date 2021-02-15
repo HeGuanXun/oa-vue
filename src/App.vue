@@ -12,6 +12,7 @@
   }
   body,html{
     width: 100%;
+    min-width: 1300px;
     height: 100%;
   }
 </style>

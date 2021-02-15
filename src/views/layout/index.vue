@@ -7,10 +7,19 @@
       </el-container>
     </el-header>
     <el-container>
-      <el-aside width="200px">
-        <asideNav/>
-      </el-aside>
-      <el-main>Main</el-main>
+     <div class="columnflex">
+       <div class="title">
+         {{this.$Store.getters.nav_title}}
+       </div>
+      <div>
+        <el-aside width="200px">
+          <asideNav/>
+        </el-aside>
+      </div>
+     </div>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -20,12 +29,18 @@ import asideNav from "./nav.vue";
 import topbar from "./topbar.vue";
 export default {
   data() {
-    return {};
+    return {
+
+    };
   },
   components: { asideNav, topbar },
 };
 </script>
 <style lang="scss" scoped>
+.title{
+  padding: 10px;
+  background-color: silver;
+}
 .el-header {
   padding: 0;
   background-color: #0079FE;
@@ -38,7 +53,7 @@ export default {
 }
 
 .el-main {
-  background-color: #E9EEF3;
+  background-color: white;
   color: #333;
   text-align: center;
   line-height: 160px;

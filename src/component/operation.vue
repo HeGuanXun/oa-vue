@@ -3,11 +3,10 @@
 <script>
     import Vue from "vue";
     import { eventBus } from "scripts/utils/BUS";
-    import qs from 'qs';
     // eslint-disable-next-line no-irregular-whitespace
-    export default {
+    export default{
         // eslint-disable-next-line no-irregular-whitespace
-        data () {
+        data(){
             return {
                 listLoading:false
             }
@@ -16,7 +15,7 @@
 
         },
         // eslint-disable-next-line no-irregular-whitespace
-        methods: {
+        methods:{
             $DeleteById(url,id,bus,idType){
                 let aa = "删除成功"
                 let bb = "Failed to delete, please contact the administrator"

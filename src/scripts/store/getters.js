@@ -6,5 +6,6 @@ export default {
   title: state => state.title,
   role: state => state.role,
   roles: state => state.roles,
-  $vm: state => state.$vm
+  $vm: state => state.$vm,
+  nav_title: state => state.nav_title
 };

@@ -1,19 +1,14 @@
 <!--  -->
 <template>
-  <div class="full_size" id="navBarbox" v-if="reFresh" >
-    <el-menu ref="menu"
-      :default-active="menu.defaultActive"
-      class="el-menu-vertical-demo content"
-      style="height:100%;"
-      background-color="#545c64"
-      text-color="#fff"
-      :router="true"
+  <div  v-if="reFresh" class="columnflex" >
+    <el-menu ref="menu"navBarbox
+             :default-active="menu.defaultActive"
+             :router="true"
     >
-      <div style="width: 166px;margin-top: 70%"></div>
       <el-menu-item
-              v-for="(page, i) in navBar"
-              :key="i"
-              :index="page.url"
+          v-for="(page, i) in navBar"
+          :key="i"
+          :index="page.url"
       >
         {{ page.name }}
       </el-menu-item>
@@ -27,22 +22,21 @@ export default {
   data() {
     return {
       reFresh: true,
-      menu: {
-        defaultActive: ""
-      },
-      navBar: []
+      navBar: [],
+      menu:{
+        defaultActive: ''
+      }
     };
   },
-
   components: {},
-
   mounted() {
     let self = this;
     eventBus.$on("navList", nav => {
-      self.navBar = nav;
-      this.$set(this.menu, 'defaultActive', nav[0].url)
-      console.log(nav[0].url);
-      this.$router.push(nav[0].url).catch(err => {
+      self.navBar = nav.navList;
+      this.$store.commit("NAV_TITLE",nav.label)
+      console.log(self.navBar[0].url);
+      this.$set(this.menu, 'defaultActive', self.navBar[0].url)
+      this.$router.push(self.navBar[0].url).catch(err => {
         console.debug(err);
       });
       setTimeout(()=>{
@@ -50,6 +44,7 @@ export default {
       },200)
     });
   },
+
   beforeDestroy() {
     eventBus.$off('navList');
   },
@@ -70,6 +65,19 @@ export default {
 };
 </script>
 <style lang="scss">
+.el-menu-item {
+  border: 0.01px solid #999999;
+  color: #8c939d;
+}
+.el-aside {
+  color: #333;
+  border: 1px #f2f2f2 solid;
+  text-align: center;
+  line-height: 0px;
+  min-height: 750px;
+  height: 100%;
+}
+
   html,body {
     width: 100%;
     height: 100%;
@@ -85,7 +93,7 @@ export default {
   }
 #navBarbox {
   .el-menu {
-    border: 0;
+    border: 1px;
   }
   .erp {
     font-size: 25px;
